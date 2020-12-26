@@ -1,0 +1,47 @@
+version: '3'
+services:
+  test:
+    ports:
+      - "25565:25565"
+      - "25575:25575"
+
+    environment:
+      EULA: "TRUE"
+      #VERSION: LATEST
+      VERSION: 1.16.4
+      # Valid values are: peaceful, easy, normal, and hard, and an
+      DIFFICULTY: normal
+      #WHITELIST: Off
+      #OPS: SavelijFC
+      ALLOW_NETHER: "true"
+      #ANNOUNCE_PLAYER_ACHIEVEMENTS: "true"   
+      ENABLE_COMMAND_BLOCK: "true"
+      GENERATE_STRUCTURES: "true"
+      HARDCORE: "false"
+      SNOOPER_ENABLED: "false"
+      SPAWN_ANIMALS: "true"
+      SPAWN_MONSTERS: "true"
+      # Determines if villagers will be spawned.
+      SPAWN_NPCS: "true"
+      VIEW_DISTANCE: 10
+      #creative survival adventure spectator (only for Minecraft 1.8 or later)
+      MODE: survival
+      MOTD: 'Spigot test'
+      ONLINE_MODE: "true"
+      SERVER_PORT: 25565
+      TYPE: SPIGOT
+      #      SEED: 
+      MEMORY: 2G
+
+    volumes:
+        - ./data:/data
+        - ./plugins:/data/plugins
+
+    image: itzg/minecraft-server
+
+    container_name: minecraft_test
+
+    tty: true
+    stdin_open: true
+    #restart: unless-stopped
+

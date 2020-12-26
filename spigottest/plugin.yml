@@ -1,0 +1,10 @@
+name: spigottest
+main: dk.jegkalinux.spigottest.myplugin
+version: 1.0
+api-version: 1.16
+commands:
+  mycommand:
+    description: An example command
+    usage: /mycommand
+    permission: myplugin.mycommand
+    permission-message: You don't have the myplugin.mycommand permission.
